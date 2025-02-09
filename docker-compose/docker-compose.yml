@@ -21,13 +21,24 @@ services:
         retries: 5
 
     elasticsearch:
-      image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.17.13
+      platform: linux/arm64 
       command: elasticsearch -Enetwork.bind_host=0.0.0.0 -Ehttp.max_content_length=2000mb
       ports:
         - 9200:9200
       environment:
         - ES_JAVA_OPTS=-Xms2g -Xmx2g
         - ANONYMOUS_USER=true
+        - "bootstrap.system_call_filter=false"
+        - "discovery.type=single-node"    # 단일 노드 모드 활성화
+        - "xpack.security.enabled=false"  # xpack 보안 비활성화
+      ulimits:                           # 시스템 리소스 제한 설정
+        memlock:
+          soft: -1
+          hard: -1
+        nofile:
+          soft: 65536
+          hard: 65536
 
     kibiter:
       restart: on-failure:5
