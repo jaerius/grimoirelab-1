@@ -1,0 +1,26 @@
+{
+  "bluenodeBE": {
+    "meta": {
+      "title": "bluenodeBE"
+    },
+    "git": [
+      "https://github.com/Bluenode2024/POCBE"
+    ]
+  },
+  "bluenodeFE": {
+    "meta": {
+      "title": "bluenodeFE"
+    },
+    "git": [
+      "https://github.com/Bluenode2024/POCFE"
+    ]
+  },
+  "ip": {
+    "meta": {
+      "title": "ip"
+    },
+    "git": [
+      "https://github.com/jaerius/ip-sheild"
+    ]
+  }
+}
