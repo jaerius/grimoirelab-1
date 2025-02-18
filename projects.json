@@ -22,5 +22,13 @@
     "git": [
       "https://github.com/jaerius/ip-sheild"
     ]
+  },
+  "test": {
+    "meta": {
+      "title": "rollup"
+    },
+    "git": [
+      "https://github.com/jaerius/acrs-ethtokyo"
+    ]
   }
 }
